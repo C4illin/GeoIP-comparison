@@ -1,0 +1,35 @@
+{
+  "https://ip-api.com/": {
+    "client": "http://ip-api.com/json/",
+    "server": "http://ip-api.com/json/8.8.8.8",
+    "formats":[
+      "json",
+      "XML",
+      "CSV",
+      "Newline",
+      "PHP"
+    ],
+    "https": false
+  },
+  "https://ipapi.co/": {
+    "client": "https://ipapi.co/json/",
+    "server": "https://ipapi.co/8.8.8.8/json/",
+    "formats":[
+      "json",
+      "jsonp",
+      "xml",
+      "csv",
+      "yaml"
+    ],
+    "https": true
+  }
+}
+
+// https://ipbase.com/
+// https://ipgeolocation.io/
+// https://ipstack.com/
+// https://ipxapi.com/
+// https://ipwhois.io/
+// https://getgeoapi.com/
+// http://www.telize.com/
+// https://www.ipify.org/
