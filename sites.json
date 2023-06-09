@@ -1,54 +1,64 @@
 {
-  "https://ip-api.com/": {
+  "ip-api.com": {
+    "homepage": "http://ip-api.com/",
     "client": "http://ip-api.com/json/",
     "server": "http://ip-api.com/json/8.8.8.8",
     "formats": ["json", "XML", "CSV", "Newline", "PHP"],
     "https": false,
     "limit": "45/min"
   },
-  "https://ipapi.co/": {
+  "ipapi.co": {
+    "homepage": "https://ipapi.co/",
     "client": "https://ipapi.co/json/",
     "server": "https://ipapi.co/8.8.8.8/json/",
     "formats": ["json", "jsonp", "XML", "CSV", "yaml"],
     "https": true,
     "limit": "1000/day"
   },
-  "https://ipbase.com/": {
+  "ipbase.com": {
+    "homepage": "https://ipbase.com/",
     "client": "https://api.ipbase.com/v2/info?apikey=YOUR-APIKEY",
     "server": "https://api.ipbase.com/v2/info?ip=8.8.8.8&apikey=YOUR-APIKEY",
     "https": true,
     "limit": "150/month"
   },
-  "https://ipgeolocation.io/": {
+  "ipgeolocation.io": {
+    "homepage": "https://ipgeolocation.io/",
     "server": "https://api.ipgeolocation.io/ipgeo?ip=8.8.8.8&apiKey=YOUR-APIKEY",
     "https": true,
     "limit": "1000/day"
   },
-  "https://ipxapi.com/": {
+  "ipxapi.com": {
+    "homepage": "https://ipxapi.com/",
     "https": true,
     "paid": true
   },
-  "https://ipstack.com/": {
+  "ipstack.com": {
+    "homepage": "https://ipstack.com/",
     "https": true
   },
-  "https://ipwhois.io/": {
+  "ipwhois.io": {
+    "homepage": "https://ipwhois.io/",
     "client": "http://ipwho.is/",
     "server": "http://ipwho.is/8.8.8.8",
     "https": true,
     "limit": "10000/month"
   },
-  "https://getgeoapi.com/": {
+  "getgeoapi.com": {
+    "homepage": "https://getgeoapi.com/",
     "client": "https://api.getgeoapi.com/v2/ip/check?api_key=YOUR-APIKEY",
     "server": "https://api.getgeoapi.com/v2/ip/8.8.8.8?api_key=YOUR-APIKEY",
     "https": true,
     "formats": ["json","XML"],
     "limit": "300/day"
   },
-  "http://www.telize.com/": {
+  "www.telize.com": {
+    "homepage": "http://www.telize.com/",
     "https": false
   },
-  "https://www.ipify.org/": {
-    "server":  "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=YOUR-APIKEY&ipAddress=8.8.8.8",
+  "www.ipify.org": {
+    "homepage": "https://www.ipify.org/",
+    "server": "geo.ipify.org/api/v2/country,city,vpn?apiKey=YOUR-APIKEY&ipAddress=8.8.8.8",
     "https": true,
     "limit": "333/account"
   }
