@@ -28,20 +28,18 @@
     "https": true,
     "limit": "1000/day"
   },
-  "ipxapi.com": {
-    "homepage": "https://ipxapi.com/",
-    "https": true,
-    "paid": true
-  },
   "ipstack.com": {
     "homepage": "https://ipstack.com/",
-    "https": true
+    "client": "http://api.ipstack.com/check?access_key=YOUR-APIKEY",
+    "server": "http://api.ipstack.com/8.8.8.8?access_key=YOUR-APIKEY",
+    "https": true,
+    "limit": "100/month"
   },
   "ipwhois.io": {
     "homepage": "https://ipwhois.io/",
     "client": "http://ipwho.is/",
     "server": "http://ipwho.is/8.8.8.8",
-    "https": true,
+    "https": false,
     "limit": "10000/month"
   },
   "getgeoapi.com": {
@@ -52,13 +50,9 @@
     "formats": ["json","XML"],
     "limit": "300/day"
   },
-  "www.telize.com": {
-    "homepage": "http://www.telize.com/",
-    "https": false
-  },
-  "www.ipify.org": {
-    "homepage": "https://www.ipify.org/",
-    "server": "geo.ipify.org/api/v2/country,city,vpn?apiKey=YOUR-APIKEY&ipAddress=8.8.8.8",
+  "geo.ipify.org": {
+    "homepage": "https://geo.ipify.org/",
+    "server": "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=YOUR-APIKEY&ipAddress=8.8.8.8",
     "https": true,
     "limit": "333/account"
   }

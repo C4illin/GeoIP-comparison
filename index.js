@@ -1,6 +1,7 @@
 const axios = require('axios');
 const sites = require('./sites.json');
 const fs = require('fs');
+require('dotenv').config()
 
 async function testAPI(url) {
   const start = Date.now();
@@ -17,21 +18,23 @@ async function testAPI(url) {
 async function testAll() {
   for (const [api, details] of Object.entries(sites)) {
     if (details.client && details.client.length > 0) {
-      if (details.client.includes('YOUR-APIKEY')) {
-        continue;
+      let url = details.client;
+      if (url.includes('YOUR-APIKEY')) {
+        url = url.replace('YOUR-APIKEY', process.env[api])
       }
 
-      const result = await testAPI(details.client);
+      const result = await testAPI(url);
       sites[api]["clientTime"] = result.time;
       sites[api]["clientData"] = result.data;
     }
 
     if (details.server && details.server.length > 0) {
-      if (details.server.includes('YOUR-APIKEY')) {
-        continue;
+      let url = details.server;
+      if (url.includes('YOUR-APIKEY')) {
+        url = url.replace('YOUR-APIKEY', process.env[api])
       }
 
-      const result = await testAPI(details.server);
+      const result = await testAPI(url);
       sites[api]["serverTime"] = result.time;
       sites[api]["serverData"] = result.data;
     }
@@ -41,21 +44,32 @@ async function testAll() {
   return sites;
 }
 
-function createMarkdownTableData(data) {
-  let markdown = "| API | Clientside Lookup | Serverside Lookup |\n";
-  markdown += "| --- | --- | --- |\n"
+function markdownTableForSites(data) {
+  let markdown = "## Sites\n| Url | Https | Limit | Clientside | Client lookup delay | Serverside delay |\n";
+  markdown += "| --- | --- | --- | --- | --- | --- |\n"
+  
 
   for (const [api, details] of Object.entries(data)) {
-    const clientData = details.clientData ? JSON.stringify(details.clientData, null, 2).replaceAll("\n", "<br>") : '';
+    markdown += `| ${details.homepage} | <ul><li>- ${details.https ? '[x]' : '[ ]'}</li></ul> | ${details.limit} | <ul><li>- ${details.client ? '[x]' : '[ ]'} </li></ul> | ${details.clientTime ? details.clientTime : 'n/a'} | ${details.serverTime ? details.serverTime : ''} |\n`;
+  }
+
+  return markdown;
+}
+
+function markdownTableResponses(data) {
+  let markdown = "## Example response\n| API | Serverside Lookup |\n";
+  markdown += "| --- | --- |\n"
+
+  for (const [api, details] of Object.entries(data)) {
+    // const clientData = details.clientData ? JSON.stringify(details.clientData, null, 2).replaceAll("\n", "<br>") : '';
     const serverData = details.serverData ? JSON.stringify(details.serverData, null, 2).replaceAll("\n", "<br>") : '';
-    markdown += `| ${api} | <pre>${clientData}</pre> | <pre>${serverData}</pre> |\n`;
+    markdown += `| ${api} | <pre>${serverData}</pre> |\n`;
   }
 
   return markdown;
 }
 
 testAll().then((data) => {
-  // console.log(data);
-  // console.log(createMarkdownTableData(data));
-  fs.writeFileSync('output.md', createMarkdownTableData(data));
+  let header = fs.readFileSync('header.md', 'utf8')
+  fs.writeFileSync('readme.md', header + markdownTableForSites(data) + markdownTableResponses(data));
 });
