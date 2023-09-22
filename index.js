@@ -47,7 +47,7 @@ async function testAll() {
 function markdownTableForSites(data) {
   let markdown = "## Sites\n| Url | Https | Limit | Clientside | Client lookup delay | Serverside delay |\n";
   markdown += "| --- | --- | --- | --- | --- | --- |\n"
-  
+
 
   for (const [api, details] of Object.entries(data)) {
     markdown += `| ${details.homepage} | <ul><li>- ${details.https ? '[x]' : '[ ]'} </li></ul> | ${details.limit} | <ul><li>- ${details.client ? '[x]' : '[ ]'} </li></ul> | ${details.clientTime ? details.clientTime : 'n/a'} | ${details.serverTime ? details.serverTime : ''} |\n`;
