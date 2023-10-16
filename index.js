@@ -1,5 +1,5 @@
 const axios = require('axios');
-const sites = require('./site/sites.json');
+const sites = require('./docs/sites.json');
 const fs = require('fs');
 require('dotenv').config()
 
