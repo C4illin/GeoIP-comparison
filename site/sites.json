@@ -17,21 +17,21 @@
   },
   "ipbase.com": {
     "homepage": "https://ipbase.com/",
-    "client": "https://api.ipbase.com/v2/info?apikey=YOUR-APIKEY",
-    "server": "https://api.ipbase.com/v2/info?ip=8.8.8.8&apikey=YOUR-APIKEY",
+    "client": "https://api.ipbase.com/v2/info?apikey=lg4r1BXbh6WVi54Xy3RU7xbWbe9U1AVHBkLTR2bg",
+    "server": "https://api.ipbase.com/v2/info?ip=8.8.8.8&apikey=lg4r1BXbh6WVi54Xy3RU7xbWbe9U1AVHBkLTR2bg",
     "https": true,
     "limit": "150/month"
   },
   "ipgeolocation.io": {
     "homepage": "https://ipgeolocation.io/",
-    "server": "https://api.ipgeolocation.io/ipgeo?ip=8.8.8.8&apiKey=YOUR-APIKEY",
+    "server": "https://api.ipgeolocation.io/ipgeo?ip=8.8.8.8&apiKey=b73c404b85de4cf189b84e2c29b5da78",
     "https": true,
     "limit": "1000/day"
   },
   "ipstack.com": {
     "homepage": "https://ipstack.com/",
-    "client": "http://api.ipstack.com/check?access_key=YOUR-APIKEY",
-    "server": "http://api.ipstack.com/8.8.8.8?access_key=YOUR-APIKEY",
+    "client": "http://api.ipstack.com/check?access_key=b398fd1ef06686b67bd9dea5747408d2",
+    "server": "http://api.ipstack.com/8.8.8.8?access_key=b398fd1ef06686b67bd9dea5747408d2",
     "https": true,
     "limit": "100/month"
   },
@@ -44,16 +44,23 @@
   },
   "getgeoapi.com": {
     "homepage": "https://getgeoapi.com/",
-    "client": "https://api.getgeoapi.com/v2/ip/check?api_key=YOUR-APIKEY",
-    "server": "https://api.getgeoapi.com/v2/ip/8.8.8.8?api_key=YOUR-APIKEY",
+    "client": "https://api.getgeoapi.com/v2/ip/check?api_key=b4fc42c56365b7874d8bb30a39ad2a7fb6f18b0d",
+    "server": "https://api.getgeoapi.com/v2/ip/8.8.8.8?api_key=b4fc42c56365b7874d8bb30a39ad2a7fb6f18b0d",
     "https": true,
     "formats": ["json","XML"],
     "limit": "300/day"
   },
   "geo.ipify.org": {
     "homepage": "https://geo.ipify.org/",
-    "server": "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=YOUR-APIKEY&ipAddress=8.8.8.8",
+    "server": "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_RsTsdSKlf5yul15KOGNGj1kB024U3&ipAddress=8.8.8.8",
     "https": true,
     "limit": "333/account"
+  },
+  "ip2location.io": {
+    "homepage": "https://www.ip2location.io/",
+    "server": "https://api.ip2location.io/?key=63277DF7D8C7C7311135F43EFD591030&ip=8.8.8.8",
+    "https": true,
+    "formats": ["json", "XML"],
+    "limit": "30000/month"
   }
 }
