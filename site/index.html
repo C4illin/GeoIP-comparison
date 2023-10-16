@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js'></script>
-  <link href='https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+  <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+  <script async src="renderjson.js" type="text/javascript"></script>
 </head>
+
 <body>
-  <div id='map' style='width: 400px; height: 300px;'></div>
-  <script src="script.js"></script>
+  <div id="map"></div>
+  <main class="container">
+    <div class="grid">
+      <input type="text" id="ipAddress" name="ipAddress" placeholder="IP Address">
+      <button type="submit" value="Submit" onclick="drawMap()">Find</button>
+    </div>
+    <hr>
+    <div id="result">
+      
+    </div>
+  </main>
+  <script defer src="script.js"></script>
 </body>
+
 </html>

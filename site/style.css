@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--bkg);
+    color: var(--txt);
+}
+
+div#map {
+    width: 50%;
+    height: 100vh;
+}
+
+div.result {
+    border-radius: var(--border-radius);
+    background: var(--code-background-color);
+    padding: var(--spacing);
+    margin: var(--spacing);
+}
+
+div.maplibregl-popup {
+    color: #000;
+}
+
+button.maplibregl-popup-close-button {
+    background-color: transparent;
+    text-align: right;
+    color: #000;
+    padding: 0 4px 0 0;
+    margin: 0px;
+    height: max-content;
+    transition: none;
+    box-shadow: none;
+    border: none;
+}
+
+button.maplibregl-popup-close-button:hover {
+    background-color: rgb(0 0 0/5%);
+}

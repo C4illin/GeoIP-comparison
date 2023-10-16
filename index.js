@@ -50,7 +50,7 @@ function markdownTableForSites(data) {
 
 
   for (const [api, details] of Object.entries(data)) {
-    markdown += `| ${details.homepage} | <ul><li>- ${details.https ? '[x]' : '[ ]'} </li></ul> | ${details.limit} | <ul><li>- ${details.client ? '[x]' : '[ ]'} </li></ul> | ${details.clientTime ? details.clientTime : 'n/a'} | ${details.serverTime ? details.serverTime : ''} |\n`;
+    markdown += `| ${details.homepage} | <ul><li>- ${details.https ? '[x]' : '[ ]'} </li></ul> | ${details.limit} | <ul><li>- ${details.client ? '[x]' : '[ ]'} </li></ul> | ${details.clientTime ? details.clientTime + " ms" : 'n/a'} | ${details.serverTime ? details.serverTime + " ms" : ''} |\n`;
   }
 
   return markdown;
