@@ -33,6 +33,8 @@ var drawMap = function () {
     return;
   }
 
+  let resultElem = document.getElementById('result');
+  resultElem.innerHTML = '';
   let waitingForFirstLocation = true;
   let formElem = document.getElementById('ipAddress')
   let ip = formElem.value;
