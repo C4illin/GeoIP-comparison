@@ -63,5 +63,11 @@
     "https": true,
     "formats": ["json", "XML"],
     "limit": "30000/month"
+  },
+  "ipinfo.io": {
+    "homepage": "https://ipinfo.io/",
+    "server": "https://ipinfo.io/8.8.8.8?token=5fd5a2efa76b59",
+    "https": true,
+    "limit": "50000/month"
   }
 }
