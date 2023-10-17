@@ -84,7 +84,7 @@ var drawMap = function () {
         fetch(url).then(response => response.json()).then(data => {
           let timeDiff = (performance.now() - timeStart).toFixed(0);
           let latitude = data.latitude || data.lat || data?.location?.lat || data?.location?.latitude || data?.data?.location?.latitude || 0;
-          let longitude = data.longitude || data.lon || data?.location?.lon || data?.location?.longitude || data?.data?.location?.longitude || 0;
+          let longitude = data.longitude || data.lon || data?.location?.lng || data?.location?.longitude || data?.data?.location?.longitude || 0;
 
           if (latitude == 0 && longitude == 0 && data.loc) {
             let loc = data.loc.split(',');
