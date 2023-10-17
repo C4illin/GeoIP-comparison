@@ -58,6 +58,7 @@
   },
   "ip2location.io": {
     "homepage": "https://www.ip2location.io/",
+    "client": "https://api.ip2location.io/?key=63277DF7D8C7C7311135F43EFD591030",
     "server": "https://api.ip2location.io/?key=63277DF7D8C7C7311135F43EFD591030&ip=8.8.8.8",
     "https": true,
     "formats": ["json", "XML"],
