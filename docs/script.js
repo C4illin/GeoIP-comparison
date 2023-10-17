@@ -1,7 +1,7 @@
 var map = new maplibregl.Map({
   container: 'map',
   style: 'https://api.maptiler.com/maps/basic-v2/style.json?key=UCMEHVYLkm63xmIW4vFe', // stylesheet location
-  center: [0, 0], // starting position [lng, lat]
+  center: [0, 45], // starting position [lng, lat]
   zoom: 5 // starting zoom
 });
 
@@ -31,7 +31,6 @@ var addResult = function (api, result, timeDiff, latitude, longitude) {
 }
 
 var drawMap = function () {
-  console.log('drawMap');
   // check if map has loaded
   if (!map.loaded()) {
     setTimeout(drawMap, 500);
@@ -40,13 +39,15 @@ var drawMap = function () {
 
   let resultElem = document.getElementById('result');
   resultElem.innerHTML = '';
-  let waitingForFirstLocation = true;
+  let progress = 0;
   let formElem = document.getElementById('ipAddress')
   let ip = formElem.value;
   let buttonElem = document.querySelector('div.grid button');
   buttonElem.disabled = true;
-  buttonElem.innerHTML = 'Please wait…';
+  buttonElem.textContent = 'Please wait…';
   buttonElem.ariaBusy = true;
+  let progressElem = document.querySelector("progress");
+  progressElem.classList.remove('hidden');
 
   const options = {
     enableHighAccuracy: false,
@@ -75,7 +76,6 @@ var drawMap = function () {
         //   url = details.server;
         let url = details.server;
         url = url.replace('8.8.8.8', ip);
-        console.log(url);
         if (url.includes('YOUR-APIKEY')) {
           continue;
         }
@@ -95,10 +95,15 @@ var drawMap = function () {
             return;
           }
 
-          if (waitingForFirstLocation) {
-            waitingForFirstLocation = false;
+          let progressElem = document.querySelector("progress");
+
+          if (progress == 0) {
             map.setCenter([longitude, latitude]);
+            map.setZoom(8);
+            progressElem.max = Object.keys(data).length;
           }
+          progress++;
+          progressElem.value = progress;
 
           addResult(api, data, timeDiff, latitude, longitude);
 
@@ -115,8 +120,9 @@ var drawMap = function () {
     })
     .then(() => {
       buttonElem.disabled = false;
-      buttonElem.innerHTML = 'Find';
+      buttonElem.textContent = 'Find';
       buttonElem.ariaBusy = false;
+      progressElem.classList.add('hidden');
     })
     .catch(error => {
       console.error(error);

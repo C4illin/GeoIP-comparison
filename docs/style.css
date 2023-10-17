@@ -20,6 +20,10 @@ main.container {
     padding: var(--spacing);
 }
 
+.hidden {
+    display: none;
+}
+
 div.result {
     border-radius: var(--border-radius);
     background: var(--code-background-color);
