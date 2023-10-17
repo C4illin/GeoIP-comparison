@@ -1,5 +1,7 @@
 # GeoIP-api comparison
-Comparison of some different mostly free GeoIP APIs I found around the internet.## Sites
+Comparison of some different mostly free GeoIP APIs I found around the internet.
+
+## Sites
 | Url | Https | Limit | Clientside | Client lookup delay | Serverside delay |
 | --- | --- | --- | --- | --- | --- |
 | http://ip-api.com/ | <ul><li>- [ ] </li></ul> | 45/min | <ul><li>- [x] </li></ul> | 1188 ms | 39 ms |
