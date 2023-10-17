@@ -16,11 +16,16 @@ var map = new maplibregl.Map({
   }
 })();
 
-var addResult = function (url, result, timeDiff) {
+var goToLocation = function (latitude, longitude) {
+  map.setCenter([longitude, latitude]);
+  map.setZoom(10);
+}
+
+var addResult = function (api, result, timeDiff, latitude, longitude) {
   let resultElem = document.getElementById('result');
   let divElem = document.createElement('div');
   divElem.classList.add('result');
-  divElem.innerHTML = `<hgroup><h3>${url}</h3><h4>${timeDiff}ms</h4></hgroup>`;
+  divElem.innerHTML = `<div class="flexRow"><hgroup><h3>${api}</h3><h4>${timeDiff}ms</h4></hgroup><button class="result" onclick="goToLocation(${latitude}, ${longitude})">Go To</button></div>`;
   divElem.appendChild(renderjson(result))
   resultElem.appendChild(divElem);
 }
@@ -40,7 +45,7 @@ var drawMap = function () {
   let ip = formElem.value;
   let buttonElem = document.querySelector('div.grid button');
   buttonElem.disabled = true;
-  buttonElem.innerHTML = 'Loading...';
+  buttonElem.innerHTML = 'Please wait…';
   buttonElem.ariaBusy = true;
 
   const options = {
@@ -50,7 +55,7 @@ var drawMap = function () {
   };
 
   navigator.geolocation.getCurrentPosition(function (position) {
-    map.setCenter([position.coords.longitude, position.coords.latitude]);
+    // map.setCenter([position.coords.longitude, position.coords.latitude]);
     var marker = new maplibregl.Marker({ "color": "#b40219" })
       .setLngLat([position.coords.longitude, position.coords.latitude])
       .addTo(map)
@@ -66,14 +71,11 @@ var drawMap = function () {
     .then(response => response.json())
     .then(data => {
       for (const [api, details] of Object.entries(data)) {
-        let url = '';
-        if (details.client && details.client.length > 0) {
-          url = details.client;
-        } else {
-          url = details.server;
-          url = url.replace('8.8.8.8', ip);
-          console.log(url);
-        }
+        // if (details.client && details.client.length > 0) {
+        //   url = details.server;
+        let url = details.server;
+        url = url.replace('8.8.8.8', ip);
+        console.log(url);
         if (url.includes('YOUR-APIKEY')) {
           continue;
         }
@@ -98,7 +100,7 @@ var drawMap = function () {
             map.setCenter([longitude, latitude]);
           }
 
-          addResult(api, data, timeDiff);
+          addResult(api, data, timeDiff, latitude, longitude);
 
           const marker = new maplibregl.Marker()
             .setLngLat([longitude, latitude])
