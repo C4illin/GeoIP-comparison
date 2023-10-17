@@ -86,8 +86,10 @@ var drawMap = function () {
           let latitude = data.latitude || data.lat || data?.location?.lat || data?.location?.latitude || data?.data?.location?.latitude || 0;
           let longitude = data.longitude || data.lon || data?.location?.lon || data?.location?.longitude || data?.data?.location?.longitude || 0;
 
-          if (data.ip) {
-            ip = data.ip;
+          if (latitude == 0 && longitude == 0 && data.loc) {
+            let loc = data.loc.split(',');
+            latitude = loc[0] || 0;
+            longitude = loc[1] || 0;
           }
 
           if (latitude == 0 && longitude == 0) {
