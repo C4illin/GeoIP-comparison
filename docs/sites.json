@@ -33,7 +33,7 @@
     "client": "http://api.ipstack.com/check?access_key=b398fd1ef06686b67bd9dea5747408d2",
     "server": "http://api.ipstack.com/8.8.8.8?access_key=b398fd1ef06686b67bd9dea5747408d2",
     "https": false,
-    "limit": "100/month"
+    "limit": "1000/month"
   },
   "ipwhois.io": {
     "homepage": "https://ipwhois.io/",
