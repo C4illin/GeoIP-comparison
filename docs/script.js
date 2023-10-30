@@ -52,7 +52,7 @@ var getLonLat = function (data) {
 
 
 var fetchAndDisplay = function (api, url, ip, proxy = false) {
-  const proxyUrl = "http://localhost:3000/";
+  const proxyUrl = "https://ipgeoproxy.emrik.org/";
   let timeStart = performance.now();
   fetch(url).then(response => response.json()).then(data => {
     let timeDiff = (performance.now() - timeStart).toFixed(0);
