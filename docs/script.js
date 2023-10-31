@@ -28,7 +28,7 @@ var addResult = function (api, result, timeDiff, latitude, longitude, proxy) {
   <div class="flexRow">
     <hgroup>
       <h3>${api}</h3>
-      <h4>${timeDiff}ms ${proxy ? '(proxy)' : ''}</h4>
+      <h4>${timeDiff}ms${proxy ? ' (proxy)' : ''}</h4>
     </hgroup>
     <button class="result" onclick="goToLocation(${latitude}, ${longitude})">Go To</button>
   </div>`;
