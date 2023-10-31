@@ -16,4 +16,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
-CMD [ "node", "*proxy.js" ]
+CMD [ "node", "proxy.js" ]
