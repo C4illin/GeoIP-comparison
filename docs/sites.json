@@ -74,7 +74,7 @@
     "homepage": "https://dev.maxmind.com/geoip/geoip2/geolite2/",
     "server": "https://geoipproxy.emrik.org/geolite2/8.8.8.8",
     "https": true,
-    "limit": "n/a"
+    "limit": "Unlimited"
   },
   "geoip2": {
     "homepage": "https://www.maxmind.com/en/geoip2-city-database",

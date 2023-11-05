@@ -4,8 +4,8 @@ const sites = require('./docs/sites.json');
 const axios = require('axios');
 const WebServiceClient = require('@maxmind/geoip2-node').WebServiceClient;
 require('dotenv').config()
-const geoipKey = process.env["maxmind.com"]
-const maxmindaccount = process.env["maxmind.com.account"]
+const geoipKey = process.env.maxmind
+const maxmindaccount = process.env.maxmindaccount
 console.log("Using maxmind account id: " + maxmindaccount)
 const geoipClient = new WebServiceClient(maxmindaccount, geoipKey);
 const geoliteClient = new WebServiceClient(maxmindaccount, geoipKey, { host: 'geolite.info' });
