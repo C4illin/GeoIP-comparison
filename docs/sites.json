@@ -69,5 +69,17 @@
     "server": "https://ipinfo.io/8.8.8.8?token=5fd5a2efa76b59",
     "https": true,
     "limit": "50000/month"
+  },
+  "geolite2": {
+    "homepage": "https://dev.maxmind.com/geoip/geoip2/geolite2/",
+    "server": "https://geoipproxy.emrik.org/geolite2/8.8.8.8",
+    "https": true,
+    "limit": "n/a"
+  },
+  "geoip2": {
+    "homepage": "https://www.maxmind.com/en/geoip2-city-database",
+    "server": "https://geoipproxy.emrik.org/geoip2/8.8.8.8",
+    "https": true,
+    "limit": "16667/account"
   }
 }

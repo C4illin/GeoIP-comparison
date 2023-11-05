@@ -151,8 +151,12 @@ var drawMap = function () {
         if (url.includes('YOUR-APIKEY')) {
           continue;
         }
+        let proxy = false;
+        if (url.startsWith('https://geoipproxy.emrik.org/')) {
+          proxy = true;
+        }
 
-        fetchAndDisplay(api, url, ip, false)
+        fetchAndDisplay(api, url, ip, proxy)
       }
     })
     .then(() => {

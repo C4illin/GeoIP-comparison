@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@maxmind/geoip2-node": "^4.2.0",
     "axios": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.1.4",
