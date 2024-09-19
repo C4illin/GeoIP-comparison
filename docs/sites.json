@@ -81,5 +81,28 @@
     "server": "https://geoipproxy.emrik.org/geoip2/8.8.8.8",
     "https": true,
     "limit": "16667/account"
+  },
+  "GeoJS": {
+    "homepage": "https://www.geojs.io/",
+    "client": "https://get.geojs.io/v1/ip/geo.json"
+    "server": "https://get.geojs.io/v1/ip/geo/8.8.8.8.json",
+    "https": true,
+    "formats": ["json", "jsonp"]
+    "limit": "Unlimited"
+  },
+  "ReallyFreeGeoIP": {
+    "homepage": "https://reallyfreegeoip.org/",
+    "client": "https://reallyfreegeoip.org/json/",
+    "server": "https://reallyfreegeoip.org/json/8.8.8.8",
+    "https": true,
+    "formats": ["json", "XML", "CSV"],
+    "limit": "Unlimited"
+  },
+  "FreeIPAPI": {
+    "homepage": "https://freeipapi.com",
+    "client": "https://freeipapi.com/api/json/",
+    "server": "https://freeipapi.com/api/json/8.8.8.8",
+    "https": true,
+    "limit": "60/min"
   }
 }
