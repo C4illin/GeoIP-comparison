@@ -1,133 +1,108 @@
 {
-  "ip-api.com": {
-    "homepage": "http://ip-api.com/",
-    "client": "http://ip-api.com/json/",
-    "server": "http://ip-api.com/json/8.8.8.8",
-    "formats": [
-      "json",
-      "XML",
-      "CSV",
-      "Newline",
-      "PHP"
-    ],
-    "https": false,
-    "limit": "45/min"
-  },
-  "ipapi.co": {
-    "homepage": "https://ipapi.co/",
-    "client": "https://ipapi.co/json/",
-    "server": "https://ipapi.co/8.8.8.8/json/",
-    "formats": [
-      "json",
-      "jsonp",
-      "XML",
-      "CSV",
-      "yaml"
-    ],
-    "https": true,
-    "limit": "1000/day"
-  },
-  "ipbase.com": {
-    "homepage": "https://ipbase.com/",
-    "client": "https://api.ipbase.com/v2/info?apikey=lg4r1BXbh6WVi54Xy3RU7xbWbe9U1AVHBkLTR2bg",
-    "server": "https://api.ipbase.com/v2/info?ip=8.8.8.8&apikey=lg4r1BXbh6WVi54Xy3RU7xbWbe9U1AVHBkLTR2bg",
-    "https": true,
-    "limit": "150/month"
-  },
-  "ipgeolocation.io": {
-    "homepage": "https://ipgeolocation.io/",
-    "server": "https://api.ipgeolocation.io/ipgeo?ip=8.8.8.8&apiKey=b73c404b85de4cf189b84e2c29b5da78",
-    "https": true,
-    "limit": "1000/day"
-  },
-  "ipstack.com": {
-    "homepage": "https://ipstack.com/",
-    "client": "http://api.ipstack.com/check?access_key=b398fd1ef06686b67bd9dea5747408d2",
-    "server": "http://api.ipstack.com/8.8.8.8?access_key=b398fd1ef06686b67bd9dea5747408d2",
-    "https": false,
-    "limit": "1000/month"
-  },
-  "ipwhois.io": {
-    "homepage": "https://ipwhois.io/",
-    "client": "https://ipwho.is/",
-    "server": "https://ipwho.is/8.8.8.8",
-    "https": true,
-    "limit": "10000/month"
-  },
-  "getgeoapi.com": {
-    "homepage": "https://getgeoapi.com/",
-    "client": "https://api.getgeoapi.com/v2/ip/check?api_key=b4fc42c56365b7874d8bb30a39ad2a7fb6f18b0d",
-    "server": "https://api.getgeoapi.com/v2/ip/8.8.8.8?api_key=b4fc42c56365b7874d8bb30a39ad2a7fb6f18b0d",
-    "https": true,
-    "formats": [
-      "json",
-      "XML"
-    ],
-    "limit": "300/day"
-  },
-  "geo.ipify.org": {
-    "homepage": "https://geo.ipify.org/",
-    "server": "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_jWy8qMwmMP24UlTo7caVorN4sOmgd&ipAddress=8.8.8.8",
-    "https": true,
-    "limit": "333/account"
-  },
-  "ip2location.io": {
-    "homepage": "https://www.ip2location.io/",
-    "client": "https://api.ip2location.io/?key=63277DF7D8C7C7311135F43EFD591030",
-    "server": "https://api.ip2location.io/?key=63277DF7D8C7C7311135F43EFD591030&ip=8.8.8.8",
-    "https": true,
-    "formats": [
-      "json",
-      "XML"
-    ],
-    "limit": "30000/month"
-  },
-  "ipinfo.io": {
-    "homepage": "https://ipinfo.io/",
-    "server": "https://ipinfo.io/8.8.8.8?token=5fd5a2efa76b59",
-    "https": true,
-    "limit": "50000/month"
-  },
-  "geolite2": {
-    "homepage": "https://dev.maxmind.com/geoip/geoip2/geolite2/",
-    "server": "https://geoipproxy.emrik.org/geolite2/8.8.8.8",
-    "https": true,
-    "limit": "Unlimited"
-  },
-  "geoip2": {
-    "homepage": "https://www.maxmind.com/en/geoip2-city-database",
-    "server": "https://geoipproxy.emrik.org/geoip2/8.8.8.8",
-    "https": true,
-    "limit": "16667/account"
-  },
-  "GeoJS": {
-    "homepage": "https://www.geojs.io/",
-    "client": "https://get.geojs.io/v1/ip/geo.json",
-    "server": "https://get.geojs.io/v1/ip/geo/8.8.8.8.json",
-    "https": true,
-    "formats": [
-      "json",
-      "jsonp"
-    ],
-    "limit": "Unlimited"
-  },
-  "ReallyFreeGeoIP": {
-    "homepage": "https://reallyfreegeoip.org/",
-    "client": "https://reallyfreegeoip.org/json/",
-    "server": "https://reallyfreegeoip.org/json/8.8.8.8",
-    "https": true,
-    "formats": [
-      "json",
-      "XML",
-      "CSV"
-    ],
-    "limit": "Unlimited"
-  },
-  "FreeIPAPI": {
-    "homepage": "https://freeipapi.com",
-    "client": "https://freeipapi.com/api/json/",
-    "server": "https://freeipapi.com/api/json/8.8.8.8",
-    "https": true,
-    "limit": "60/min"
-  }
+	"ip-api.com": {
+		"homepage": "http://ip-api.com/",
+		"client": "http://ip-api.com/json/",
+		"server": "http://ip-api.com/json/8.8.8.8",
+		"formats": ["json", "XML", "CSV", "Newline", "PHP"],
+		"https": false,
+		"limit": "45/min"
+	},
+	"ipapi.co": {
+		"homepage": "https://ipapi.co/",
+		"client": "https://ipapi.co/json/",
+		"server": "https://ipapi.co/8.8.8.8/json/",
+		"formats": ["json", "jsonp", "XML", "CSV", "yaml"],
+		"https": true,
+		"limit": "1000/day"
+	},
+	"ipbase.com": {
+		"homepage": "https://ipbase.com/",
+		"client": "https://api.ipbase.com/v2/info?apikey=lg4r1BXbh6WVi54Xy3RU7xbWbe9U1AVHBkLTR2bg",
+		"server": "https://api.ipbase.com/v2/info?ip=8.8.8.8&apikey=lg4r1BXbh6WVi54Xy3RU7xbWbe9U1AVHBkLTR2bg",
+		"https": true,
+		"limit": "150/month"
+	},
+	"ipgeolocation.io": {
+		"homepage": "https://ipgeolocation.io/",
+		"server": "https://api.ipgeolocation.io/ipgeo?ip=8.8.8.8&apiKey=b73c404b85de4cf189b84e2c29b5da78",
+		"https": true,
+		"limit": "1000/day"
+	},
+	"ipstack.com": {
+		"homepage": "https://ipstack.com/",
+		"client": "http://api.ipstack.com/check?access_key=b398fd1ef06686b67bd9dea5747408d2",
+		"server": "http://api.ipstack.com/8.8.8.8?access_key=b398fd1ef06686b67bd9dea5747408d2",
+		"https": false,
+		"limit": "1000/month"
+	},
+	"ipwhois.io": {
+		"homepage": "https://ipwhois.io/",
+		"client": "https://ipwho.is/",
+		"server": "https://ipwho.is/8.8.8.8",
+		"https": true,
+		"limit": "10000/month"
+	},
+	"getgeoapi.com": {
+		"homepage": "https://getgeoapi.com/",
+		"client": "https://api.getgeoapi.com/v2/ip/check?api_key=b4fc42c56365b7874d8bb30a39ad2a7fb6f18b0d",
+		"server": "https://api.getgeoapi.com/v2/ip/8.8.8.8?api_key=b4fc42c56365b7874d8bb30a39ad2a7fb6f18b0d",
+		"https": true,
+		"formats": ["json", "XML"],
+		"limit": "300/day"
+	},
+	"geo.ipify.org": {
+		"homepage": "https://geo.ipify.org/",
+		"server": "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_jWy8qMwmMP24UlTo7caVorN4sOmgd&ipAddress=8.8.8.8",
+		"https": true,
+		"limit": "333/account"
+	},
+	"ip2location.io": {
+		"homepage": "https://www.ip2location.io/",
+		"client": "https://api.ip2location.io/?key=63277DF7D8C7C7311135F43EFD591030",
+		"server": "https://api.ip2location.io/?key=63277DF7D8C7C7311135F43EFD591030&ip=8.8.8.8",
+		"https": true,
+		"formats": ["json", "XML"],
+		"limit": "30000/month"
+	},
+	"ipinfo.io": {
+		"homepage": "https://ipinfo.io/",
+		"server": "https://ipinfo.io/8.8.8.8?token=5fd5a2efa76b59",
+		"https": true,
+		"limit": "50000/month"
+	},
+	"geolite2": {
+		"homepage": "https://dev.maxmind.com/geoip/geoip2/geolite2/",
+		"server": "https://geoipproxy.emrik.org/geolite2/8.8.8.8",
+		"https": true,
+		"limit": "Unlimited"
+	},
+	"geoip2": {
+		"homepage": "https://www.maxmind.com/en/geoip2-city-database",
+		"server": "https://geoipproxy.emrik.org/geoip2/8.8.8.8",
+		"https": true,
+		"limit": "16667/account"
+	},
+	"GeoJS": {
+		"homepage": "https://www.geojs.io/",
+		"client": "https://get.geojs.io/v1/ip/geo.json",
+		"server": "https://get.geojs.io/v1/ip/geo/8.8.8.8.json",
+		"https": true,
+		"formats": ["json", "jsonp"],
+		"limit": "Unlimited"
+	},
+	"ReallyFreeGeoIP": {
+		"homepage": "https://reallyfreegeoip.org/",
+		"client": "https://reallyfreegeoip.org/json/",
+		"server": "https://reallyfreegeoip.org/json/8.8.8.8",
+		"https": true,
+		"formats": ["json", "XML", "CSV"],
+		"limit": "Unlimited"
+	},
+	"FreeIPAPI": {
+		"homepage": "https://freeipapi.com",
+		"client": "https://freeipapi.com/api/json/",
+		"server": "https://freeipapi.com/api/json/8.8.8.8",
+		"https": true,
+		"limit": "60/min"
+	}
 }
