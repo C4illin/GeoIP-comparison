@@ -3,7 +3,13 @@
     "homepage": "http://ip-api.com/",
     "client": "http://ip-api.com/json/",
     "server": "http://ip-api.com/json/8.8.8.8",
-    "formats": ["json", "XML", "CSV", "Newline", "PHP"],
+    "formats": [
+      "json",
+      "XML",
+      "CSV",
+      "Newline",
+      "PHP"
+    ],
     "https": false,
     "limit": "45/min"
   },
@@ -11,7 +17,13 @@
     "homepage": "https://ipapi.co/",
     "client": "https://ipapi.co/json/",
     "server": "https://ipapi.co/8.8.8.8/json/",
-    "formats": ["json", "jsonp", "XML", "CSV", "yaml"],
+    "formats": [
+      "json",
+      "jsonp",
+      "XML",
+      "CSV",
+      "yaml"
+    ],
     "https": true,
     "limit": "1000/day"
   },
@@ -47,12 +59,15 @@
     "client": "https://api.getgeoapi.com/v2/ip/check?api_key=b4fc42c56365b7874d8bb30a39ad2a7fb6f18b0d",
     "server": "https://api.getgeoapi.com/v2/ip/8.8.8.8?api_key=b4fc42c56365b7874d8bb30a39ad2a7fb6f18b0d",
     "https": true,
-    "formats": ["json","XML"],
+    "formats": [
+      "json",
+      "XML"
+    ],
     "limit": "300/day"
   },
   "geo.ipify.org": {
     "homepage": "https://geo.ipify.org/",
-    "server": "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_RsTsdSKlf5yul15KOGNGj1kB024U3&ipAddress=8.8.8.8",
+    "server": "https://geo.ipify.org/api/v2/country,city,vpn?apiKey=at_jWy8qMwmMP24UlTo7caVorN4sOmgd&ipAddress=8.8.8.8",
     "https": true,
     "limit": "333/account"
   },
@@ -61,7 +76,10 @@
     "client": "https://api.ip2location.io/?key=63277DF7D8C7C7311135F43EFD591030",
     "server": "https://api.ip2location.io/?key=63277DF7D8C7C7311135F43EFD591030&ip=8.8.8.8",
     "https": true,
-    "formats": ["json", "XML"],
+    "formats": [
+      "json",
+      "XML"
+    ],
     "limit": "30000/month"
   },
   "ipinfo.io": {
@@ -84,10 +102,13 @@
   },
   "GeoJS": {
     "homepage": "https://www.geojs.io/",
-    "client": "https://get.geojs.io/v1/ip/geo.json"
+    "client": "https://get.geojs.io/v1/ip/geo.json",
     "server": "https://get.geojs.io/v1/ip/geo/8.8.8.8.json",
     "https": true,
-    "formats": ["json", "jsonp"]
+    "formats": [
+      "json",
+      "jsonp"
+    ],
     "limit": "Unlimited"
   },
   "ReallyFreeGeoIP": {
@@ -95,7 +116,11 @@
     "client": "https://reallyfreegeoip.org/json/",
     "server": "https://reallyfreegeoip.org/json/8.8.8.8",
     "https": true,
-    "formats": ["json", "XML", "CSV"],
+    "formats": [
+      "json",
+      "XML",
+      "CSV"
+    ],
     "limit": "Unlimited"
   },
   "FreeIPAPI": {
