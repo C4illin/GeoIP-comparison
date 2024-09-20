@@ -82,7 +82,7 @@
 		"https": true,
 		"limit": "16667/account"
 	},
-	"GeoJS": {
+	"geojs.io": {
 		"homepage": "https://www.geojs.io/",
 		"client": "https://get.geojs.io/v1/ip/geo.json",
 		"server": "https://get.geojs.io/v1/ip/geo/8.8.8.8.json",
@@ -90,7 +90,7 @@
 		"formats": ["json", "jsonp"],
 		"limit": "Unlimited"
 	},
-	"ReallyFreeGeoIP": {
+	"reallyfreegeoip.org": {
 		"homepage": "https://reallyfreegeoip.org/",
 		"client": "https://reallyfreegeoip.org/json/",
 		"server": "https://reallyfreegeoip.org/json/8.8.8.8",
@@ -98,7 +98,7 @@
 		"formats": ["json", "XML", "CSV"],
 		"limit": "Unlimited"
 	},
-	"FreeIPAPI": {
+	"freeipapi.com": {
 		"homepage": "https://freeipapi.com",
 		"client": "https://freeipapi.com/api/json/",
 		"server": "https://freeipapi.com/api/json/8.8.8.8",
