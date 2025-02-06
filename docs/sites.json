@@ -110,7 +110,7 @@
     "client": "https://api.ipquery.io/",
     "server": "https://api.ipquery.io/8.8.8.8",
     "https": true,
-    "limit": "Unknown",
-    "formats": ["json", "Text", "YAML", "XML"]
+    "formats": ["json", "Text", "YAML", "XML"],
+    "limit": "Unlimited"
   }
 }
