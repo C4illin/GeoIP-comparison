@@ -105,7 +105,7 @@
     "https": true,
     "limit": "60/min"
   },
-  "ipquery": {
+  "ipquery.io": {
     "homepage": "https://ipquery.io/",
     "client": "https://api.ipquery.io/",
     "server": "https://api.ipquery.io/8.8.8.8",
