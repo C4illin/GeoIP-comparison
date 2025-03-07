@@ -112,5 +112,11 @@
     "https": true,
     "formats": ["json", "Text", "YAML", "XML"],
     "limit": "Unlimited"
+  },
+	"bgpview.io": {
+		"homepage": "https://bgpview.io",
+		"server": "https://api.bgpview.io/ip/8.8.8.8",
+		"https": true,
+		"limit": "Unlimited"
   }
 }
