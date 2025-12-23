@@ -119,5 +119,13 @@
     "https": true,
     "formats": ["json"],
     "limit": "Unlimited"
+  },
+  "proxycheck.io": {
+    "homepage": "https://proxycheck.io",
+    "client": "https://proxycheck.io/v3/",
+    "server": "https://proxycheck.io/v3/8.8.8.8",
+    "https": true,
+    "formats": ["json"],
+    "limit": "1000/day"
   }
 }
