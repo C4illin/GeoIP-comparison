@@ -11,7 +11,8 @@ async function testAPI(url) {
     const data = response.data;
     return { time: end - start, data: data };
   } catch (error) {
-    console.error(error);
+    console.error(`Request failed for ${url}:`, error?.message || error);
+    return { time: null, data: null, error: error?.message || String(error) };
   }
 }
 
@@ -24,8 +25,8 @@ async function testAll() {
       }
 
       const result = await testAPI(url);
-      sites[api]["clientTime"] = result.time;
-      sites[api]["clientData"] = result.data;
+      sites[api]["clientTime"] = result?.time ?? null;
+      sites[api]["clientData"] = result?.data ?? null;
     }
 
     if (details.server && details.server.length > 0) {
@@ -35,8 +36,8 @@ async function testAll() {
       }
 
       const result = await testAPI(url);
-      sites[api]["serverTime"] = result.time;
-      sites[api]["serverData"] = result.data;
+      sites[api]["serverTime"] = result?.time ?? null;
+      sites[api]["serverData"] = result?.data ?? null;
     }
   }
 
