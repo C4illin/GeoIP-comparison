@@ -1,9 +1,9 @@
-const express = require("express");
-const cors = require("cors");
-const sites = require("./docs/sites.json");
-const axios = require("axios");
-const WebServiceClient = require("@maxmind/geoip2-node").WebServiceClient;
-require("dotenv").config();
+import { WebServiceClient } from "@maxmind/geoip2-node";
+import axios from "axios";
+import cors from "cors";
+import "dotenv/config";
+import express from "express";
+import sites from "./docs/sites.json" with { type: "json" };
 const geoipKey = process.env.maxmind;
 const maxmindaccount = process.env.maxmindaccount;
 console.log("Using maxmind account id: " + maxmindaccount);

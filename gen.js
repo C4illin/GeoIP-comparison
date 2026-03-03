@@ -1,7 +1,7 @@
-const axios = require("axios");
-const sites = require("./docs/sites.json");
-const fs = require("fs");
-require("dotenv").config();
+import axios from "axios";
+import "dotenv/config";
+import { readFileSync, writeFileSync } from "fs";
+import sites from "./docs/sites.json" with { type: "json" };
 
 async function testAPI(url) {
   const start = Date.now();
@@ -40,7 +40,7 @@ async function testAll() {
     }
   }
 
-  fs.writeFileSync("output.json", JSON.stringify(sites, null, 2));
+  writeFileSync("output.json", JSON.stringify(sites, null, 2));
   return sites;
 }
 
@@ -78,9 +78,9 @@ function markdownTableResponses(data) {
 }
 
 testAll().then((data) => {
-  let header = fs.readFileSync("header.md", "utf8");
-  fs.writeFileSync(
+  let header = readFileSync("header.md", "utf8");
+  writeFileSync(
     "readme.md",
-    header + markdownTableForSites(data) + markdownTableResponses(data)
+    header + markdownTableForSites(data) + markdownTableResponses(data),
   );
 });

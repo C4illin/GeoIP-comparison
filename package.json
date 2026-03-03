@@ -2,9 +2,10 @@
   "name": "geoip-comparison",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "proxy.js",
+  "type": "module",
   "scripts": {
-    "gen": "node index.js",
+    "gen": "node gen.js",
     "proxy": "node proxy.js"
   },
   "author": "C4illin",
