@@ -13,7 +13,7 @@ RUN npm install
 # RUN npm ci --only=production
 
 # Bundle app source (only proxy.js is needed for the proxy server)
-COPY proxy.js proxy.js
+COPY . .
 
 EXPOSE 3000
 CMD [ "node", "proxy.js" ]
