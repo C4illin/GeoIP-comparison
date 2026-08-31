@@ -4,7 +4,11 @@ import cors from "cors";
 import express from "express";
 import { loadEnvFile } from "node:process";
 import sites from "./docs/sites.json" with { type: "json" };
-loadEnvFile();
+try {
+  loadEnvFile();
+} catch {
+  // No .env file; rely on variables already set in the environment.
+}
 const geoipKey = process.env.maxmind;
 const maxmindaccount = process.env.maxmindaccount;
 console.log("Using maxmind account id: " + maxmindaccount);
