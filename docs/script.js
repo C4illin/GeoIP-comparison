@@ -1,3 +1,5 @@
+import * as maplibregl from "https://unpkg.com/maplibre-gl@^6.6.0/dist/maplibre-gl.mjs";
+
 var map = new maplibregl.Map({
   container: "map",
   style:
@@ -103,7 +105,7 @@ var fetchAndDisplay = function (api, url, ip, proxy = false) {
         .setLngLat([longitude, latitude])
         .addTo(map)
         .setPopup(
-          new maplibregl.Popup().setHTML(api + "<br>" + timeDiff + "ms")
+          new maplibregl.Popup().setHTML(api + "<br>" + timeDiff + "ms"),
         )
         .on("click", function () {
           marker.togglePopup();
@@ -160,7 +162,7 @@ var drawMap = function () {
     (error) => {
       console.log(error);
     },
-    options
+    options,
   );
   fetch("sites.json")
     .then((response) => response.json())
@@ -191,3 +193,8 @@ var drawMap = function () {
       console.error(error);
     });
 };
+
+// This file is loaded as a module, so functions called from inline
+// onclick attributes must be exposed on window explicitly.
+window.drawMap = drawMap;
+window.goToLocation = goToLocation;
