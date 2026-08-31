@@ -15,6 +15,11 @@ const geoliteClient = new WebServiceClient(maxmindaccount, geoipKey, {
 
 const app = express();
 const port = 3000;
+// Runs behind Traefik (Docker network) with Cloudflare in front: trust
+// X-Forwarded-* headers from private/loopback addresses so req.ip resolves
+// to the client instead of the proxy, without trusting spoofed headers from
+// clients that reach the app directly.
+app.set("trust proxy", ["loopback", "linklocal", "uniquelocal"]);
 app.use(cors());
 
 app.get("/:site/:ip", (req, res) => {
@@ -54,6 +59,12 @@ app.get("/:site/:ip", (req, res) => {
   } else {
     res.send("Site not found");
   }
+});
+
+app.get("/ip", (req, res) => {
+  // Cloudflare puts the real client address in CF-Connecting-IP
+  const ip = req.get("CF-Connecting-IP") ?? req.ip;
+  res.send(ip);
 });
 
 app.get("/", (req, res) => {
