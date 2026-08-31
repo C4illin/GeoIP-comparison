@@ -11,10 +11,9 @@
   "author": "C4illin",
   "license": "MIT",
   "dependencies": {
-    "@maxmind/geoip2-node": "^5.0.0",
-    "axios": "^1.16.0",
+    "@maxmind/geoip2-node": "^7.1.0",
+    "axios": "^1.20.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^5.2.0"
+    "express": "^5.2.1"
   }
 }

@@ -1,9 +1,10 @@
 import { WebServiceClient } from "@maxmind/geoip2-node";
 import axios from "axios";
 import cors from "cors";
-import "dotenv/config";
 import express from "express";
+import { loadEnvFile } from "node:process";
 import sites from "./docs/sites.json" with { type: "json" };
+loadEnvFile();
 const geoipKey = process.env.maxmind;
 const maxmindaccount = process.env.maxmindaccount;
 console.log("Using maxmind account id: " + maxmindaccount);
