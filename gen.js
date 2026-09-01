@@ -53,9 +53,7 @@ function markdownTableForSites(data) {
   for (const [api, details] of Object.entries(data)) {
     markdown += `| ${details.homepage} | <ul><li>- ${
       details.https ? "[x]" : "[ ]"
-    } </li></ul> | ${details.limit} | <ul><li>- ${
-      details.client ? "[x]" : "[ ]"
-    } </li></ul> | ${
+    } </li></ul> | ${details.limit} | <ul><li>- ${details.client ? "[x]" : "[ ]"} </li></ul> | ${
       details.clientTime ? details.clientTime + " ms" : "n/a"
     } | ${details.serverTime ? details.serverTime + " ms" : ""} |\n`;
   }
@@ -80,8 +78,5 @@ function markdownTableResponses(data) {
 
 testAll().then((data) => {
   let header = readFileSync("header.md", "utf8");
-  writeFileSync(
-    "readme.md",
-    header + markdownTableForSites(data) + markdownTableResponses(data),
-  );
+  writeFileSync("readme.md", header + markdownTableForSites(data) + markdownTableResponses(data));
 });

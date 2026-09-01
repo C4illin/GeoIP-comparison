@@ -2,16 +2,13 @@ import * as maplibregl from "https://unpkg.com/maplibre-gl@^6.6.0/dist/maplibre-
 
 var map = new maplibregl.Map({
   container: "map",
-  style:
-    "https://api.maptiler.com/maps/basic-v2/style.json?key=UCMEHVYLkm63xmIW4vFe", // stylesheet location
+  style: "https://api.maptiler.com/maps/basic-v2/style.json?key=UCMEHVYLkm63xmIW4vFe", // stylesheet location
   center: [0, 45], // starting position [lng, lat]
   zoom: 5, // starting zoom
 });
 
 (async function () {
-  let ip = await fetch("https://geoipproxy.emrik.org/ip").then((response) =>
-    response.text(),
-  );
+  let ip = await fetch("https://geoipproxy.emrik.org/ip").then((response) => response.text());
 
   let formElem = document.getElementById("ipAddress");
   if (formElem.value == "") {
@@ -137,8 +134,7 @@ var fetchAndDisplay = function (api, url, ip, proxy = false) {
 
       addResult(api, data, timeDiff, latitude, longitude, proxy);
 
-      let key =
-        Number(latitude).toFixed(4) + "," + Number(longitude).toFixed(4);
+      let key = Number(latitude).toFixed(4) + "," + Number(longitude).toFixed(4);
       let entry = markersByCoord[key];
       if (entry) {
         entry.lines.push(api + "<br>" + timeDiff + "ms");

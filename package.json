@@ -2,18 +2,22 @@
   "name": "geoip-comparison",
   "version": "1.0.0",
   "description": "",
-  "main": "proxy.js",
+  "license": "MIT",
+  "author": "C4illin",
   "type": "module",
+  "main": "proxy.js",
   "scripts": {
     "gen": "node gen.js",
-    "proxy": "node proxy.js"
+    "proxy": "node proxy.js",
+    "fmt": "oxfmt"
   },
-  "author": "C4illin",
-  "license": "MIT",
   "dependencies": {
     "@maxmind/geoip2-node": "^7.1.0",
     "axios": "^1.20.0",
     "cors": "^2.8.5",
     "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.66.0"
   }
 }

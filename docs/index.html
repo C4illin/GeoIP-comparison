@@ -8,10 +8,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.conditional.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/maplibre-gl@^6.6.0/dist/maplibre-gl.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@^6.6.0/dist/maplibre-gl.css" />
     <link rel="stylesheet" href="style.css" />
     <script async src="renderjson.js" type="text/javascript"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -24,21 +21,12 @@
     <div id="map"></div>
     <main class="pico container">
       <div class="grid">
-        <input
-          type="text"
-          id="ipAddress"
-          name="ipAddress"
-          placeholder="IP Address"
-        />
+        <input type="text" id="ipAddress" name="ipAddress" placeholder="IP Address" />
         <button type="submit" value="Submit" onclick="drawMap()">Find</button>
       </div>
-
-      <small></small>
-        <button id="gpsButton" onclick="showGPS()">Show GPS position</button>.
-        Source code:
-        <a href="https://github.com/C4illin/GeoIP-comparison"
-          >GeoIP-comparison</a
-        >.</small
+      <small>
+        <button id="gpsButton" onclick="showGPS()">Show GPS position</button>. Source code:
+        <a href="https://github.com/C4illin/GeoIP-comparison">GeoIP-comparison</a>.</small
       >
       <hr />
       <progress class="hidden" value="0" max="10"></progress>
