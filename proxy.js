@@ -36,7 +36,7 @@ app.get("/:site/:ip", (req, res) => {
       .then((response) => {
         res.send(response);
       })
-      .catch((error) => {
+      .catch(() => {
         res.send("Error with request to " + site);
       });
   } else if (site == "geolite2") {
@@ -45,7 +45,7 @@ app.get("/:site/:ip", (req, res) => {
       .then((response) => {
         res.send(response);
       })
-      .catch((error) => {
+      .catch(() => {
         res.send("Error with request to " + site);
       });
   } else if (site in sites) {
@@ -57,7 +57,7 @@ app.get("/:site/:ip", (req, res) => {
       .then((response) => {
         res.send(response.data);
       })
-      .catch((error) => {
+      .catch(() => {
         res.send("Error with request to " + site);
       });
   } else {
