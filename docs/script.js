@@ -9,11 +9,9 @@ var map = new maplibregl.Map({
 });
 
 (async function () {
-  let ip = await fetch("https://api.ipify.org?format=json")
-    .then((response) => response.json())
-    .then((data) => {
-      return data.ip;
-    });
+  let ip = await fetch("https://geoipproxy.emrik.org/ip").then((response) =>
+    response.text(),
+  );
 
   let formElem = document.getElementById("ipAddress");
   if (formElem.value == "") {
@@ -23,6 +21,43 @@ var map = new maplibregl.Map({
 
 var goToLocation = function (latitude, longitude) {
   map.setCenter([longitude, latitude]);
+};
+
+var gpsMarker = null;
+
+var showGPS = function () {
+  let buttonElem = document.getElementById("gpsButton");
+  buttonElem.disabled = true;
+  buttonElem.ariaBusy = true;
+
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      let lngLat = [position.coords.longitude, position.coords.latitude];
+      if (gpsMarker == null) {
+        gpsMarker = new maplibregl.Marker({ color: "#b40219" })
+          .setLngLat(lngLat)
+          .addTo(map)
+          .setPopup(new maplibregl.Popup().setHTML("GPS Position"));
+      } else {
+        gpsMarker.setLngLat(lngLat);
+      }
+      map.setCenter(lngLat);
+      buttonElem.textContent = "Show GPS position";
+      buttonElem.disabled = false;
+      buttonElem.ariaBusy = false;
+    },
+    (error) => {
+      console.log(error);
+      buttonElem.textContent = "GPS unavailable – retry";
+      buttonElem.disabled = false;
+      buttonElem.ariaBusy = false;
+    },
+    {
+      enableHighAccuracy: false,
+      timeout: 10000,
+      maximumAge: 100000,
+    },
+  );
 };
 
 var addResult = function (api, result, timeDiff, latitude, longitude, proxy) {
@@ -142,28 +177,6 @@ var drawMap = function () {
   progressElem.value = 0;
   progressElem.classList.remove("hidden");
 
-  const options = {
-    enableHighAccuracy: false,
-    timeout: 2000,
-    maximumAge: 100000,
-  };
-
-  navigator.geolocation.getCurrentPosition(
-    function (position) {
-      // map.setCenter([position.coords.longitude, position.coords.latitude]);
-      var marker = new maplibregl.Marker({ color: "#b40219" })
-        .setLngLat([position.coords.longitude, position.coords.latitude])
-        .addTo(map)
-        .setPopup(new maplibregl.Popup().setHTML("GPS Position"))
-        .on("click", function () {
-          marker.togglePopup();
-        });
-    },
-    (error) => {
-      console.log(error);
-    },
-    options,
-  );
   fetch("sites.json")
     .then((response) => response.json())
     .then((data) => {
@@ -198,3 +211,4 @@ var drawMap = function () {
 // onclick attributes must be exposed on window explicitly.
 window.drawMap = drawMap;
 window.goToLocation = goToLocation;
+window.showGPS = showGPS;

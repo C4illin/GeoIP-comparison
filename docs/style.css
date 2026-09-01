@@ -17,18 +17,37 @@ div#map {
 main.container {
   width: 50%;
   min-height: 100vh;
-  padding: var(--spacing);
+  padding: var(--pico-spacing);
 }
 
 .hidden {
   display: none;
 }
 
+button#gpsButton {
+  display: inline;
+  width: fit-content;
+  margin-bottom: calc(var(--pico-spacing) / 2);
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--pico-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--pico-primary-underline);
+  text-underline-offset: 0.125em;
+  cursor: pointer;
+}
+
+button#gpsButton:hover {
+  color: var(--pico-primary-hover);
+  text-decoration-color: var(--pico-primary-hover-underline);
+}
+
 div.result {
-  border-radius: var(--border-radius);
-  background: var(--code-background-color);
-  padding: var(--spacing);
-  margin: var(--spacing);
+  border-radius: var(--pico-border-radius);
+  background: var(--pico-code-background-color);
+  padding: var(--pico-spacing);
+  margin: var(--pico-spacing);
 }
 
 div.maplibregl-popup {
@@ -45,22 +64,6 @@ div.flexRow {
 button.result {
   width: fit-content;
   height: fit-content;
-}
-
-button.maplibregl-popup-close-button {
-  background-color: transparent;
-  text-align: right;
-  color: #000;
-  padding: 0 4px 0 0;
-  margin: 0px;
-  height: max-content;
-  transition: none;
-  box-shadow: none;
-  border: none;
-}
-
-button.maplibregl-popup-close-button:hover {
-  background-color: rgb(0 0 0 / 5%);
 }
 
 @media only screen and (max-width: 880px) and (min-width: 600px) {

@@ -6,7 +6,7 @@
     <title>GeoIP-comparison | Look up on multiple API:s</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.conditional.min.css"
     />
     <link
       rel="stylesheet"
@@ -22,7 +22,7 @@
 
   <body>
     <div id="map"></div>
-    <main class="container">
+    <main class="pico container">
       <div class="grid">
         <input
           type="text"
@@ -32,8 +32,10 @@
         />
         <button type="submit" value="Submit" onclick="drawMap()">Find</button>
       </div>
-      <small
-        >GPS position is only for your reference. Source code:
+
+      <small></small>
+        <button id="gpsButton" onclick="showGPS()">Show GPS position</button>.
+        Source code:
         <a href="https://github.com/C4illin/GeoIP-comparison"
           >GeoIP-comparison</a
         >.</small
