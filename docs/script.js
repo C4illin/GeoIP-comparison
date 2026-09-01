@@ -24,6 +24,7 @@ var goToLocation = function (latitude, longitude) {
 };
 
 var gpsMarker = null;
+var markersByCoord = {};
 
 var showGPS = function () {
   let buttonElem = document.getElementById("gpsButton");
@@ -136,15 +137,22 @@ var fetchAndDisplay = function (api, url, ip, proxy = false) {
 
       addResult(api, data, timeDiff, latitude, longitude, proxy);
 
-      const marker = new maplibregl.Marker()
-        .setLngLat([longitude, latitude])
-        .addTo(map)
-        .setPopup(
-          new maplibregl.Popup().setHTML(api + "<br>" + timeDiff + "ms"),
-        )
-        .on("click", function () {
-          marker.togglePopup();
-        });
+      let key =
+        Number(latitude).toFixed(4) + "," + Number(longitude).toFixed(4);
+      let entry = markersByCoord[key];
+      if (entry) {
+        entry.lines.push(api + "<br>" + timeDiff + "ms");
+        entry.marker.getPopup().setHTML(entry.lines.join("<hr>"));
+      } else {
+        let lines = [api + "<br>" + timeDiff + "ms"];
+        markersByCoord[key] = {
+          marker: new maplibregl.Marker()
+            .setLngLat([longitude, latitude])
+            .addTo(map)
+            .setPopup(new maplibregl.Popup().setHTML(lines[0])),
+          lines: lines,
+        };
+      }
     })
     .catch((error) => {
       console.error(error);
@@ -167,6 +175,8 @@ var drawMap = function () {
 
   let resultElem = document.getElementById("result");
   resultElem.innerHTML = "";
+  Object.values(markersByCoord).forEach((entry) => entry.marker.remove());
+  markersByCoord = {};
   let formElem = document.getElementById("ipAddress");
   let ip = formElem.value;
   let buttonElem = document.querySelector("div.grid button");
