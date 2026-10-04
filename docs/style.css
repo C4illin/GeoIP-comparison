@@ -82,10 +82,12 @@ button.result {
   div#map {
     width: 100%;
     height: 50vh;
+    order: 2;
   }
 
   main.container {
     width: 100%;
     min-height: 50vh;
+    order: 1;
   }
 }
